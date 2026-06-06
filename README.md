@@ -4,6 +4,7 @@
 
 Demostrar cómo un atacante puede agotar el pool de direcciones IP del servidor DHCP legítimo enviando masivamente solicitudes con MACs aleatorias, dejando sin posibilidad de obtener IP a los clientes reales de la red. Se utiliza como paso previo al DHCP Spoofing para un ataque combinado.
 
+Link a la lista de reproducción: https://www.youtube.com/playlist?list=PL1bMSHFyMPr7W7DrFd-INmRRQDjGquFIV
 ---
 
 ## 📋 Objetivo del Script
@@ -108,17 +109,6 @@ ip dhcp pool LAN
 ```
 
 > El pool disponible real es `.100` a `.254` → **155 IPs**. El script las agota con ~155 Discovers con MACs únicas.
-
----
-
-## 📸 Capturas de Pantalla
-
-> Insertar capturas en esta sección:
-
-1. **`img/01_pool_antes.png`** — `show ip dhcp pool` y `show ip dhcp binding` en R1 antes del ataque. Pool con pocas o ninguna asignación.
-2. **`img/02_script_corriendo.png`** — Terminal Kali con el script enviando Discovers. Contador avanzando.
-3. **`img/03_pool_agotado.png`** — `show ip dhcp binding` en R1 mostrando cientos de asignaciones con MACs aleatorias.
-4. **`img/04_vpc_sin_ip.png`** — VPC-1 ejecutando `ip dhcp` y recibiendo timeout o error de pool vacío.
 
 ---
 
